@@ -14,3 +14,5 @@ Update UI
 Added Animations
 Added headcount Stepper
 
+![Video Walkthrough](CodePath Tips.gif)
+
