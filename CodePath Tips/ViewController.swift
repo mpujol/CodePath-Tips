@@ -25,13 +25,7 @@ class ViewController: UIViewController {
     var animationSwitch = false
     var tipPercentages = [0.18, 0.2, 0.22]
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        //HIDE EVERYTHING!!!! Well.. almost everything.
-
+    func hideUI () {
         self.tipLabel.alpha = 0
         self.tipTitleLabel.alpha = 0
         self.totalLabel.alpha = 0
@@ -41,6 +35,28 @@ class ViewController: UIViewController {
         self.headCountTitleLabel.alpha = 0
         self.headCountLabel.alpha = 0
         self.headCountStepper.alpha = 0
+    }
+
+    func showUI () {
+        self.tipLabel.alpha = 1
+        self.tipTitleLabel.alpha = 1
+        self.totalLabel.alpha = 1
+        self.totalTitleLabel.alpha = 1
+        self.tipControl.alpha = 1
+        self.divisionUIView.alpha = 1
+        self.headCountTitleLabel.alpha = 1
+        self.headCountLabel.alpha = 1
+        self.headCountStepper.alpha = 1
+    }
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+
+        //HIDE EVERYTHING!!!! Well.. almost everything.
+
+        hideUI()
 
         //Call the keyboard
         self.billField.becomeFirstResponder()
@@ -80,15 +96,7 @@ class ViewController: UIViewController {
 
                     self.animationSwitch = true
 
-                    self.tipLabel.alpha = 1
-                    self.tipTitleLabel.alpha = 1
-                    self.totalLabel.alpha = 1
-                    self.totalTitleLabel.alpha = 1
-                    self.tipControl.alpha = 1
-                    self.divisionUIView.alpha = 1
-                    self.headCountTitleLabel.alpha = 1
-                    self.headCountLabel.alpha = 1
-                    self.headCountStepper.alpha = 1
+                    self.showUI()
 
                 }) { (YES) -> Void in
                     println("Success")
@@ -112,15 +120,7 @@ class ViewController: UIViewController {
 
                     self.animationSwitch = false
 
-                    self.tipLabel.alpha = 0
-                    self.tipTitleLabel.alpha = 0
-                    self.totalLabel.alpha = 0
-                    self.totalTitleLabel.alpha = 0
-                    self.tipControl.alpha = 0
-                    self.divisionUIView.alpha = 0
-                    self.headCountTitleLabel.alpha = 0
-                    self.headCountLabel.alpha = 0
-                    self.headCountStepper.alpha = 0
+                    self.hideUI()
 
                 }) { (YES) -> Void in
                     println("Success")
